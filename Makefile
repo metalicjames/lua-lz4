@@ -2,7 +2,7 @@ UNAME := $(shell uname)
 
 ifeq ($(UNAME), Linux)
 # linux config
-LUA_INCDIR ?= /usr/include/lua5.1
+LUA_INCDIR ?= /usr/include/lua5.3
 LUA_LIBDIR ?= /usr/lib
 LIBFLAGS   ?= -shared
 endif
