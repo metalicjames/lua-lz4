@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <memory.h>
+#include <string.h>
 
 #include <lua.h>
 #include <lualib.h>
