@@ -22,6 +22,7 @@ LUA_INCDIR ?= /usr/local/mingw/include/
 LUA_LIBDIR ?= /usr/local/mingw/lib
 LIBFLAGS ?= -shared 
 LUALIB ?= lz4.dll
+LIBS ?= -llua
 endif
 
 LZ4OBJS     = lz4/lz4.o lz4/lz4hc.o lz4/lz4frame.o lz4/xxhash.o
@@ -45,4 +46,4 @@ clean:
 	$(RM) $(CMOD) $(OBJS) $(LZ4OBJS)
 
 lz4: $(OBJS) $(LZ4OBJS)
-	$(CC) $(LDFLAGS) $(OBJS) $(LZ4OBJS) -o $(CMOD)
+	$(CC) $(LDFLAGS) $(OBJS) $(LZ4OBJS) -o $(CMOD) $(LIBS)
