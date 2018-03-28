@@ -5,16 +5,24 @@ ifeq ($(UNAME), Linux)
 LUA_INCDIR ?= /usr/include/lua5.3
 LUA_LIBDIR ?= /usr/lib
 LIBFLAGS   ?= -shared
+LUALIB     ?= lz4.so
+LUA_CFLAGS ?= -O2 -fPIC
 endif
 ifeq ($(UNAME), Darwin)
 # macosx config
 LUA_INCDIR ?= /usr/local/opt/lua/include
 LUA_LIBDIR ?= /usr/local/opt/lua/lib
 LIBFLAGS   ?= -bundle -undefined dynamic_lookup -all_load
-endif
-
 LUALIB     ?= lz4.so
 LUA_CFLAGS ?= -O2 -fPIC
+endif
+ifeq ($(UNAME), x86_64-w64-mingw32)
+# mingw-w64 config
+LUA_INCDIR ?= /usr/local/mingw/include/lua5.3
+LUA_LIBDIR ?= /usr/local/mingw/lib
+LIBFLAGS ?= -shared 
+LUALIB ?= lz4.dll
+endif
 
 LZ4OBJS     = lz4/lz4.o lz4/lz4hc.o lz4/lz4frame.o lz4/xxhash.o
 
