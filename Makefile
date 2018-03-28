@@ -18,7 +18,7 @@ LUA_CFLAGS ?= -O2 -fPIC
 endif
 ifeq ($(UNAME), x86_64-w64-mingw32)
 # mingw-w64 config
-LUA_INCDIR ?= /usr/local/mingw/include/lua5.3
+LUA_INCDIR ?= /usr/local/mingw/include/
 LUA_LIBDIR ?= /usr/local/mingw/lib
 LIBFLAGS ?= -shared 
 LUALIB ?= lz4.dll
