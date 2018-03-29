@@ -23,6 +23,7 @@ LUA_LIBDIR ?= /usr/local/mingw/lib
 LIBFLAGS ?= -shared 
 LUALIB ?= lz4.dll
 LIBS ?= -llua
+LUA_CFLAGS ?= -O2
 endif
 
 LZ4OBJS     = lz4/lz4.o lz4/lz4hc.o lz4/lz4frame.o lz4/xxhash.o
